@@ -1,0 +1,76 @@
+unit Main;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Objetos;
+
+type
+  TForm6 = class(TForm)
+    Button1: TButton;
+    Label1: TLabel;
+    lbCartas1: TLabel;
+    lbCartas2: TLabel;
+    Label4: TLabel;
+    LbResultadoJogador1: TLabel;
+    LbResultadoJogador2: TLabel;
+    lbVencedor: TLabel;
+    lbResultado: TLabel;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+  Jogador1, Jogador2:TJogador;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm6.Button1Click(Sender: TObject);
+begin
+  lbCartas1.Caption := Jogador1.CartasMao;
+  lbCartas2.Caption := Jogador2.CartasMao;
+  Button2.SetFocus;
+end;
+
+procedure TForm6.Button2Click(Sender: TObject);
+begin
+  Jogador1.BuscarMelhorResultado;
+  Jogador2.BuscarMelhorResultado;
+
+  LbResultadoJogador1.Caption := Jogador1.ResultadoNome;
+  LbResultadoJogador2.Caption := Jogador2.ResultadoNome;
+
+  if Jogador1.MelhorResultado > Jogador2.MelhorResultado then
+    lbResultado.Caption := 'Jogador 1 vence com '#13 + Jogador1.ResultadoNome
+  else
+    lbResultado.Caption := 'Jogador 2 vence com '#13 + Jogador1.ResultadoNome;
+
+  if (Jogador1.MelhorResultado = Jogador2.MelhorResultado) then
+    lbResultado.Caption := 'Empate';
+
+  Button1.SetFocus;
+end;
+
+procedure TForm6.FormCreate(Sender: TObject);
+begin
+  Jogador1 := TJogador.Create;
+  Jogador2 := TJogador.Create;
+end;
+
+end.
+
+{
+TODO:
+- Comparar resultado de jogador 1 com jogador 2
+- quando empate, desempatar com resultado maior
+}

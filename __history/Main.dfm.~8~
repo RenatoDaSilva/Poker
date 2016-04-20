@@ -1,0 +1,132 @@
+object Form6: TForm6
+  Left = 0
+  Top = 0
+  Caption = 'Form6'
+  ClientHeight = 291
+  ClientWidth = 633
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lbJogador1: TLabel
+    Left = 40
+    Top = 40
+    Width = 48
+    Height = 13
+    Caption = 'Jogador 1'
+  end
+  object lbCartas1: TLabel
+    Left = 40
+    Top = 80
+    Width = 83
+    Height = 13
+    Caption = 'Cartas Jogador 1'
+  end
+  object lbCartas2: TLabel
+    Left = 480
+    Top = 80
+    Width = 83
+    Height = 13
+    Caption = 'Cartas Jogador 2'
+  end
+  object lbJogador2: TLabel
+    Left = 480
+    Top = 40
+    Width = 48
+    Height = 13
+    Caption = 'Jogador 2'
+  end
+  object LbResultadoJogador1: TLabel
+    Left = 40
+    Top = 120
+    Width = 99
+    Height = 13
+    Caption = 'Resultado Jogador 1'
+  end
+  object LbResultadoJogador2: TLabel
+    Left = 480
+    Top = 120
+    Width = 99
+    Height = 13
+    Caption = 'Resultado Jogador 2'
+  end
+  object Button1: TButton
+    Left = 256
+    Top = 35
+    Width = 75
+    Height = 25
+    Caption = 'Dar Cartas'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object pnResultado: TPanel
+    Left = 0
+    Top = 208
+    Width = 633
+    Height = 83
+    Align = alBottom
+    TabOrder = 1
+    object lbResultado: TLabel
+      Left = 1
+      Top = 14
+      Width = 631
+      Height = 68
+      Align = alClient
+      Caption = 'Resultado'
+      ExplicitLeft = 137
+      ExplicitTop = 28
+      ExplicitWidth = 48
+      ExplicitHeight = 13
+    end
+    object lbVencedor: TLabel
+      Left = 1
+      Top = 1
+      Width = 631
+      Height = 13
+      Align = alTop
+      Caption = 'Vencedor'
+      ExplicitLeft = 140
+      ExplicitTop = 28
+      ExplicitWidth = 45
+    end
+  end
+  object pnCentral: TPanel
+    Left = 0
+    Top = 0
+    Width = 633
+    Height = 208
+    Align = alClient
+    TabOrder = 2
+    ExplicitLeft = 368
+    ExplicitTop = 120
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object PnJogador2: TPanel
+      Left = 447
+      Top = 1
+      Width = 185
+      Height = 206
+      Align = alRight
+      TabOrder = 0
+      ExplicitLeft = 16
+      ExplicitTop = 24
+      ExplicitHeight = 41
+    end
+    object PnJogador1: TPanel
+      Left = 1
+      Top = 1
+      Width = 185
+      Height = 206
+      Align = alLeft
+      TabOrder = 1
+      ExplicitLeft = 64
+      ExplicitTop = 8
+      ExplicitHeight = 41
+    end
+  end
+end

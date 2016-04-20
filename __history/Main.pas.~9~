@@ -1,0 +1,74 @@
+unit Main;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm6 = class(TForm)
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+uses Objetos;
+
+{$R *.dfm}
+
+procedure TForm6.Button1Click(Sender: TObject);
+var
+  Carta:TCarta;
+  Cartas:Array of TCarta;
+  Jogador:TJogador;
+  i,c,n :integer;
+  Baralho : TBaralho;
+  Valor : TValor;
+begin
+  Randomize;
+//  SetLength(Cartas,5);
+//  for i := 0 to 4 do
+//    begin
+//  Cartas[1] := Carta;
+//  Cartas[1].Naipe := TNaipe(random(integer(High(TNaipe))));
+//  Cartas[1].Valor := c_4;
+//  Cartas[1].Naipe := n_D;
+
+  Baralho := TBaralho.Create;
+
+  for i := 0 to 4 do
+      begin
+        Carta.Valor := TValor(random(integer(High(TValor))));
+        Carta.Naipe := TNaipe(random(integer(High(TNaipe))));
+        Jogador.Mao[i] := Carta;
+    end;
+
+
+{uses TypInfo;
+
+...
+
+var
+
+  s: string;
+
+begin
+
+  s := GetEnumName(TypeInfo(TProgrammerType),
+
+    integer(tpDelphi));}
+
+
+
+end;
+
+end.
